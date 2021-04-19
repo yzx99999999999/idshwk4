@@ -24,7 +24,7 @@ event zeek_init()
                         local r2 = result["response404"];
                         local r3 = result["responseUnique404"];
                         if(r2$sum>2)
-                        (
+                        {
                            if(r2$sum / r1$sum > 0.2)
                            { 
                                if(r3$unique / r2$sum > 0.5)
@@ -33,7 +33,7 @@ event zeek_init()
                         			key$host, r2$num, r3$hll_unique);
                                }
                            }
-                        )
+                        }
                     }]);
     }
 
